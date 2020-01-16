@@ -45,9 +45,10 @@ For a example, take a look at the `/example` directory.
 | Name                           | Type             | Default                        | Description                                                                                                                                |
 | ------------------------------ | ---------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | listItems                    | object array | []                    | List of checkboxes                                                                                                                       |
-| headerName              | string           | ''                            | shows header with the given name                                                                                               |
-| listItemStyle                   | object | {}                 | each checkboxes style                                                                                                                      |
+| headerName              | string           | ''                            | Shows header with the given name                                                                                               |
+| listItemStyle                   | object | {}                 | Each checkboxes style                                                                                                                      |
 | headerStyle             | object           | {}                            | Header checkbox style                                       |
+
 
 ## Upcoming improvements
 1. Importing checkbox through updated react-native package

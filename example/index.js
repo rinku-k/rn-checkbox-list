@@ -23,6 +23,7 @@ class Selector extends Component {
     return (
       <CheckboxList
         headerName="Movies"
+        theme="red"
         listItems={data}
         onChange={(data) => console.log("My updated list :: ", data)}
         // listItemStyle={{ borderBottomColor: '#eee', borderBottomWidth: 1 }}

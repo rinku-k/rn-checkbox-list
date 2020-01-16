@@ -1,7 +1,6 @@
 {
-  "name": "react-native-checkbox-list",
+  "name": "react-native-checkbox-list-view",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -26,5 +25,28 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "description": "List of checkboxes with select and deselect all option",
+  "main": "src/checkList.nnjs",
+  "directories": {
+    "example": "example",
+    "src": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rinkuk1993/react-native-checkbox-list.git"
+  },
+  "keywords": [
+    "checkbox",
+    "checkboxes",
+    "react-native",
+    "checkbox-list",
+    "checklist"
+  ],
+  "author": "Rinku",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rinkuk1993/react-native-checkbox-list/issues"
+  },
+  "homepage": "https://github.com/Rinkuk1993/react-native-checkbox-list#readme"
 }

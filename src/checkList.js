@@ -67,13 +67,14 @@ class CheckboxList extends Component {
 }
 
 CheckboxList.propTypes = {
-  listItems: PropTypes.array.isRequired,
+  listItems: PropTypes.array,
   headerName: PropTypes.string,
   listItemStyle: PropTypes.object,
   headerStyle: PropTypes.object,
 };
 
 CheckboxList.defaultProps = {
+  listItems: [],
   headerName: '',
   listItemStyle: {},
   headerStyle: {},

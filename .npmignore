@@ -64,3 +64,13 @@ example/
 .github/
 __tests__/
 README.md
+index.js
+.eslintrc.js
+.flowconfig
+.gitattributes
+.prettierrc.js
+.watchmanconfig
+.buckconfig
+metro.config.js
+babel.config.js
+app.json

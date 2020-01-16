@@ -11,6 +11,10 @@ The goal of `rn-checkbox-list` is to achieve the checkbox list with minimal effo
 <img src="/.github/select_all.jpeg" height="500" />
 </p>
 
+<p align="center">
+<img src="/.github/demo.gif" height="500" />
+</p>
+
 ## Setup
 
 This library is available on npm, install it with: `npm i rn-checkbox-list` or `yarn add rn-checkbox-list`.

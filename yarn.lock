@@ -843,6 +843,11 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@react-native-community/checkbox@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/checkbox/-/checkbox-0.2.2.tgz#40413657b2fd7ec92fbb53bf71a639c7864bc678"
+  integrity sha512-lmnXDrW5cH+LHfOJDkaa+5uutQ7rVsDRo3Ezea4ArHFgSCt/rAIJVmkop/DMhd37F6DH5BfTFTdM4I7GuBrHIQ==
+
 "@react-native-community/cli-debugger-ui@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-3.0.0.tgz#d01d08d1e5ddc1633d82c7d84d48fff07bd39416"

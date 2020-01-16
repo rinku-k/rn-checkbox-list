@@ -48,14 +48,16 @@ For a example, take a look at the `/example` directory.
 
 | Name                           | Type             | Default                        | Description                                                                                                                                |
 | ------------------------------ | ---------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| listItems                    | object array | []                    | List of checkboxes                                                                                                                       |
-| headerName              | string           | ''                            | Shows header with the given name                                                                                               |
-| listItemStyle                   | object | {}                 | Each checkboxes style                                                                                                                      |
-| headerStyle             | object           | {}                            | Header checkbox style                                       |
+| listItems        | object array | []          | List of checkboxes|
+| headerName       | string       | ''          | Shows header with the given name|
+| listItemStyle    | object 			| {}          | Each check list style|
+| headerStyle      | object       | {}          | Header check list style|
+| onChange      	 | function     | null        | Fires on each checkbox select or deselect|
+| theme      	 		 | string       | #1A237E     | Custom theme color for checkbox|
 
 
-## Upcoming improvements
-1. Importing checkbox through updated react-native package
-2. Customisable checkboxes
+## Improvements
+- [x] Importing checkbox through updated react-native package (removing warnings)
+- [x] Customisable checkbox colors
 
 Pull requests, feedbacks and suggestions are welcome!

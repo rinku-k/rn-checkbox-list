@@ -12,6 +12,11 @@ class CheckboxList extends Component {
     };
     this.selectAllItems = this.selectAllItems.bind(this);
   }
+  
+  shouldComponentUpdate(nextProps, nextState) {
+    this.props.onChange(nextState.selectedItems);
+    return true;
+  }
 
   selectAllItems() {
     const { selectedItems } = this.state;
@@ -39,12 +44,13 @@ class CheckboxList extends Component {
   }
 
   render() {
-    const { listItems, headerName, listItemStyle, headerStyle } = this.props;
+    const { listItems, headerName, listItemStyle, headerStyle, theme } = this.props;
     const { selectedItems } = this.state;
     return (
       <View style={{ flex: 1 }}>
         { !!headerName &&
           <CheckListHeader
+            theme={theme}
             isActive={selectedItems.length === listItems.length}
             text={headerName}
             onPress={this.selectAllItems}
@@ -54,6 +60,8 @@ class CheckboxList extends Component {
         <ScrollView>
           { listItems.map(({ id, name }) => (
             <CheckListItem
+              theme={theme}
+              key={`${id}`}
               isActive={selectedItems.indexOf(id) > -1}
               text={name}
               onPress={() => this.selectCurrentItem(id)}
@@ -71,6 +79,8 @@ CheckboxList.propTypes = {
   headerName: PropTypes.string,
   listItemStyle: PropTypes.object,
   headerStyle: PropTypes.object,
+  onChange: PropTypes.func,
+  theme: PropTypes.string,
 };
 
 CheckboxList.defaultProps = {
@@ -78,6 +88,8 @@ CheckboxList.defaultProps = {
   headerName: '',
   listItemStyle: {},
   headerStyle: {},
+  onChange: () => {},
+  theme: '#1A237E',
 }
 
 export default CheckboxList;

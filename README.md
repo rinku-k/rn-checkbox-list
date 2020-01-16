@@ -1,9 +1,9 @@
-# react-native-checkbox-list-view
+# rn-checkbox-list
 
-![npm version](https://badge.fury.io/js/react-native-checkbox-list-view.svg)
+![npm version](https://badge.fury.io/js/rn-checkbox-list.svg)
 
 
-The goal of `react-native-checkbox-list-view` is to achieve the checkbox list with minimal effort and easy customisation.
+The goal of `rn-checkbox-list` is to achieve the checkbox list with minimal effort and easy customisation.
 
 <p align="center">
 <img src="/.github/initial.jpeg" height="500" />
@@ -13,14 +13,14 @@ The goal of `react-native-checkbox-list-view` is to achieve the checkbox list wi
 
 ## Setup
 
-This library is available on npm, install it with: `npm i react-native-checkbox-list-view` or `yarn add react-native-checkbox-list-view`.
+This library is available on npm, install it with: `npm i rn-checkbox-list` or `yarn add rn-checkbox-list`.
 
 ## Usage
 
-1.  Import react-native-checkbox-list-view:
+1.  Import rn-checkbox-list:
 
 ```javascript
-import CheckboxList from "react-native-checkbox-list-view";
+import CheckboxList from "rn-checkbox-list";
 ```
 
 2.  Create data with id and name:

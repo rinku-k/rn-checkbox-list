@@ -42,6 +42,15 @@ import CheckboxList from "rn-checkbox-list";
 ```
 
 ## A complete example
+```javascript
+<CheckboxList
+	headerName="Movies"
+	theme="red"
+	listItems={data}
+	onChange={(data) => console.log("My updated list :: ", data)}
+	listItemStyle={{ borderBottomColor: '#eee', borderBottomWidth: 1 }}
+/>
+```
 For a example, take a look at the `/example` directory.
 
 ## Available props

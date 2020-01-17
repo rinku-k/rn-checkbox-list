@@ -1,6 +1,6 @@
 {
   "name": "rn-checkbox-list",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -9,6 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/checkbox": "^0.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
@@ -19,7 +20,6 @@
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.4",
     "react-test-renderer": "16.9.0",
-    "@react-native-community/checkbox": "^0.2.2",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
     "react-native": "0.61.5"

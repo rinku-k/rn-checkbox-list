@@ -50,6 +50,7 @@ import CheckboxList from "rn-checkbox-list";
 	listItems={data}
 	onChange={(data) => console.log("My updated list :: ", data)}
 	listItemStyle={{ borderBottomColor: '#eee', borderBottomWidth: 1 }}
+	onLoading={() => (<LoaderComponent />)}
 />
 ```
 For a example, take a look at the `/example` directory.

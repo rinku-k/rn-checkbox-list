@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CheckboxList from '../src/checkList';
+import { View, Text, ActivityIndicator } from 'react-native';
 
 const data = [
   { id: 1, name: 'Green Book' },
@@ -19,13 +20,30 @@ const data = [
   { id: 15, name: 'Spider-Man: Into the Spider-Verse' }];
 
 class Selector extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loader: true,
+    }
+  }
+
+  componentDidMount() {
+    setTimeout(() => this.setState({ loader: false }), 500); 
+  }
+
   render() {
     return (
       <CheckboxList
         headerName="Movies"
         theme="red"
-        listItems={data}
+        listItems={this.state.loader ? [] : data}
         onChange={(data) => console.log("My updated list :: ", data)}
+        onLoading={() => (
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <ActivityIndicator size="large" color="red" />
+            <Text style={{ fontSize: 16, color: '#555555'}}>Loading....</Text>
+          </View>
+        )}
         // listItemStyle={{ borderBottomColor: '#eee', borderBottomWidth: 1 }}
       />
     );

@@ -13,6 +13,7 @@ The goal of `rn-checkbox-list` is to achieve the checkbox list with minimal effo
 
 <p align="center">
 <img src="/.github/demo.gif" height="500" />
+<img src="/.github/loader.jpeg" height="500" />
 </p>
 
 ## Setup
@@ -62,6 +63,7 @@ For a example, take a look at the `/example` directory.
 | listItemStyle    | object 			| {}          | Each check list style|
 | headerStyle      | object       | {}          | Header check list style|
 | onChange      	 | function     | null        | Fires on each checkbox select or deselect|
+| onLoading      	 | function     | null    		| When the list is empty and a loader needs to be shown|
 | theme      	 		 | string       | #1A237E     | Custom theme color for checkbox|
 
 

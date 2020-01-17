@@ -44,19 +44,20 @@ class CheckboxList extends Component {
   }
 
   render() {
-    const { listItems, headerName, listItemStyle, headerStyle, theme } = this.props;
+    const { listItems, headerName, listItemStyle, headerStyle, theme, onLoading } = this.props;
     const { selectedItems } = this.state;
     return (
       <View style={{ flex: 1 }}>
         { !!headerName &&
           <CheckListHeader
             theme={theme}
-            isActive={selectedItems.length === listItems.length}
+            isActive={selectedItems.length === listItems.length && listItems.length > 0}
             text={headerName}
             onPress={this.selectAllItems}
             style={headerStyle}
           />
         }
+        { !listItems.length ? onLoading() :
         <ScrollView>
           { listItems.map(({ id, name }) => (
             <CheckListItem
@@ -69,6 +70,7 @@ class CheckboxList extends Component {
             />
           ))}
         </ScrollView>
+        }
       </View>
     );
   }
@@ -80,6 +82,7 @@ CheckboxList.propTypes = {
   listItemStyle: PropTypes.object,
   headerStyle: PropTypes.object,
   onChange: PropTypes.func,
+  onLoading: PropTypes.func,
   theme: PropTypes.string,
 };
 
@@ -89,6 +92,7 @@ CheckboxList.defaultProps = {
   listItemStyle: {},
   headerStyle: {},
   onChange: () => {},
+  onLoading: () => null,
   theme: '#1A237E',
 }
 

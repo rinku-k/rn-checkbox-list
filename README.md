@@ -48,7 +48,7 @@ import CheckboxList from "rn-checkbox-list";
 	headerName="Movies"
 	theme="red"
 	listItems={data}
-	onChange={(data) => console.log("My updated list :: ", data)}
+	onChange={({ ids, items }) => console.log("My updated list :: ", ids)}
 	listItemStyle={{ borderBottomColor: '#eee', borderBottomWidth: 1 }}
 	onLoading={() => (<LoaderComponent />)}
 />
@@ -71,5 +71,6 @@ For a example, take a look at the `/example` directory.
 ## Improvements
 - [x] Importing checkbox through updated react-native package (removing warnings)
 - [x] Customisable checkbox colors
+- [x] Provide selected items and selected ids
 
 Pull requests, feedbacks and suggestions are welcome!

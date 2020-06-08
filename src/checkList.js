@@ -8,50 +8,57 @@ class CheckboxList extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedIndexes: [],
       selectedItems: [],
     };
     this.selectAllItems = this.selectAllItems.bind(this);
   }
   
   shouldComponentUpdate(nextProps, nextState) {
-    this.props.onChange(nextState.selectedItems);
+    this.props.onChange({ ids: nextState.selectedIndexes, items: nextState.selectedItems });
     return true;
   }
 
   selectAllItems() {
-    const { selectedItems } = this.state;
+    const { selectedIndexes } = this.state;
     const { listItems } = this.props;
-    if (selectedItems.length < listItems.length) {
+    if (selectedIndexes.length < listItems.length) {
       this.setState({
-        selectedItems: listItems.map(item => item.id),
+        selectedIndexes: listItems.map(item => item.id),
+        selectedItems: listItems,
       });
     } else {
       this.setState({
+        selectedIndexes: [],
         selectedItems: [],
       });
     }
   }
 
-  selectCurrentItem(itemId) {
-    const { selectedItems } = this.state;
+  selectCurrentItem(data) {
+    const { selectedIndexes, selectedItems } = this.state;
+    const currentHeaderIds = selectedIndexes;
     const currentHeaderItems = selectedItems;
-    if (currentHeaderItems.indexOf(itemId) > -1) {
-      currentHeaderItems.splice(currentHeaderItems.indexOf(itemId), 1);
+    const currentSelectedIndex = currentHeaderIds.indexOf(data.id);
+    if (currentSelectedIndex > -1) {
+      currentHeaderIds.splice(currentSelectedIndex, 1);
+      currentHeaderItems.splice(currentSelectedIndex, 1);
     } else {
-      currentHeaderItems.push(itemId);
+      currentHeaderIds.push(data.id);
+      currentHeaderItems.push(data);
     }
-    this.setState({ selectedItems: currentHeaderItems });
+    this.setState({ selectedIndexes: currentHeaderIds, selectedItems: currentHeaderItems });
   }
 
   render() {
     const { listItems, headerName, listItemStyle, headerStyle, theme, onLoading } = this.props;
-    const { selectedItems } = this.state;
+    const { selectedIndexes } = this.state;
     return (
       <View style={{ flex: 1 }}>
         { !!headerName &&
           <CheckListHeader
             theme={theme}
-            isActive={selectedItems.length === listItems.length && listItems.length > 0}
+            isActive={selectedIndexes.length === listItems.length && listItems.length > 0}
             text={headerName}
             onPress={this.selectAllItems}
             style={headerStyle}
@@ -59,13 +66,13 @@ class CheckboxList extends Component {
         }
         { !listItems.length ? onLoading() :
         <ScrollView>
-          { listItems.map(({ id, name }) => (
+          { listItems.map((data) => (
             <CheckListItem
               theme={theme}
-              key={`${id}`}
-              isActive={selectedItems.indexOf(id) > -1}
-              text={name}
-              onPress={() => this.selectCurrentItem(id)}
+              key={`${data.id}`}
+              isActive={selectedIndexes.indexOf(data.id) > -1}
+              text={data.name}
+              onPress={() => this.selectCurrentItem(data)}
               style={listItemStyle}
             />
           ))}

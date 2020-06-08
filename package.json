@@ -1,6 +1,6 @@
 {
   "name": "rn-checkbox-list",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -35,19 +35,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rinkuk1993/react-native-checkbox-list.git"
+    "url": "git+https://github.com/rinku-k/rn-checkbox-list.git"
   },
   "keywords": [
     "checkbox",
     "checkboxes",
     "react-native",
     "checkbox-list",
-    "checklist"
+    "checklist",
+    "android"
   ],
   "author": "Rinku",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Rinkuk1993/react-native-checkbox-list/issues"
+    "url": "https://github.com/rinku-k/rn-checkbox-list/issues"
   },
-  "homepage": "https://github.com/Rinkuk1993/react-native-checkbox-list#readme"
+  "homepage": "https://github.com/rinku-k/rn-checkbox-list#readme"
 }

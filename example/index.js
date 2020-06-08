@@ -37,7 +37,7 @@ class Selector extends Component {
         headerName="Movies"
         theme="red"
         listItems={this.state.loader ? [] : data}
-        onChange={(data) => console.log("My updated list :: ", data)}
+        onChange={({ ids, items }) => console.log("My updated list :: ", items)}
         onLoading={() => (
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <ActivityIndicator size="large" color="red" />

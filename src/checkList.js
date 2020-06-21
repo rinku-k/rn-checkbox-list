@@ -35,6 +35,13 @@ class CheckboxList extends Component {
     }
   }
 
+  unSelectAllItem() {
+    this.setState({
+      selectedIndexes: [],
+      selectedItems: [],
+    })
+  }
+
   selectCurrentItem(data) {
     const { selectedIndexes, selectedItems } = this.state;
     const currentHeaderIds = selectedIndexes;

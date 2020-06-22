@@ -44,6 +44,7 @@ class Selector extends Component {
             <Text style={{ fontSize: 16, color: '#555555'}}>Loading....</Text>
           </View>
         )}
+        selectedListItems={data.slice(0, 4)}
         // listItemStyle={{ borderBottomColor: '#eee', borderBottomWidth: 1 }}
       />
     );

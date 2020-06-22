@@ -8,15 +8,22 @@ class CheckboxList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedIndexes: (props.selectedListItem || []).map(item => item.id),
-      selectedItems: props.selectedListItem || [],
+      selectedIndexes: props.selectedListItems.map(item => item.id),
+      selectedListItems: props.selectedListItems,
     };
     this.selectAllItems = this.selectAllItems.bind(this);
   }
   
   shouldComponentUpdate(nextProps, nextState) {
-    this.props.onChange({ ids: nextState.selectedIndexes, items: nextState.selectedItems });
+    this.props.onChange({ ids: nextState.selectedIndexes, items: nextState.selectedListItems });
     return true;
+  }
+
+  unSelectAllItem() {
+    this.setState({
+      selectedIndexes: [],
+      selectedListItems: [],
+    })
   }
 
   selectAllItems() {
@@ -25,27 +32,17 @@ class CheckboxList extends Component {
     if (selectedIndexes.length < listItems.length) {
       this.setState({
         selectedIndexes: listItems.map(item => item.id),
-        selectedItems: listItems,
+        selectedListItems: listItems,
       });
     } else {
-      this.setState({
-        selectedIndexes: [],
-        selectedItems: [],
-      });
+      this.unSelectAllItem();
     }
   }
 
-  unSelectAllItem() {
-    this.setState({
-      selectedIndexes: [],
-      selectedItems: [],
-    })
-  }
-
   selectCurrentItem(data) {
-    const { selectedIndexes, selectedItems } = this.state;
+    const { selectedIndexes, selectedListItems } = this.state;
     const currentHeaderIds = selectedIndexes;
-    const currentHeaderItems = selectedItems;
+    const currentHeaderItems = selectedListItems;
     const currentSelectedIndex = currentHeaderIds.indexOf(data.id);
     if (currentSelectedIndex > -1) {
       currentHeaderIds.splice(currentSelectedIndex, 1);
@@ -54,7 +51,7 @@ class CheckboxList extends Component {
       currentHeaderIds.push(data.id);
       currentHeaderItems.push(data);
     }
-    this.setState({ selectedIndexes: currentHeaderIds, selectedItems: currentHeaderItems });
+    this.setState({ selectedIndexes: currentHeaderIds, selectedListItems: currentHeaderItems });
   }
 
   render() {
@@ -92,9 +89,9 @@ class CheckboxList extends Component {
 
 CheckboxList.propTypes = {
   listItems: PropTypes.array,
+  selectedListItems: PropTypes.array,
   headerName: PropTypes.string,
   listItemStyle: PropTypes.object,
-  selectedListItem: PropTypes.array,
   headerStyle: PropTypes.object,
   onChange: PropTypes.func,
   onLoading: PropTypes.func,
@@ -103,6 +100,7 @@ CheckboxList.propTypes = {
 
 CheckboxList.defaultProps = {
   listItems: [],
+  selectedListItems: [],
   headerName: '',
   listItemStyle: {},
   headerStyle: {},

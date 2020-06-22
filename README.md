@@ -60,6 +60,7 @@ For a example, take a look at the `/example` directory.
 | Name                           | Type             | Default                        | Description                                                                                                                                |
 | ------------------------------ | ---------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | listItems        | object array | []          | List of checkboxes|
+| selectedListItems| object array | []          | List of selected items(subset of `listItems`)|
 | headerName       | string       | ''          | Shows header with the given name|
 | listItemStyle    | object 			| {}          | Each check list style|
 | headerStyle      | object       | {}          | Header check list style|
@@ -72,5 +73,6 @@ For a example, take a look at the `/example` directory.
 - [x] Importing checkbox through updated react-native package (removing warnings)
 - [x] Customisable checkbox colors
 - [x] Provide selected items and selected ids
+- [x] Support for default selected items
 
 Pull requests, feedbacks and suggestions are welcome!

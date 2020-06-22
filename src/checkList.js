@@ -8,8 +8,8 @@ class CheckboxList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedIndexes: [],
-      selectedItems: [],
+      selectedIndexes: (props.selectedListItem || []).map(item => item.id),
+      selectedItems: props.selectedListItem || [],
     };
     this.selectAllItems = this.selectAllItems.bind(this);
   }
@@ -33,6 +33,13 @@ class CheckboxList extends Component {
         selectedItems: [],
       });
     }
+  }
+
+  unSelectAllItem() {
+    this.setState({
+      selectedIndexes: [],
+      selectedItems: [],
+    })
   }
 
   selectCurrentItem(data) {
@@ -87,6 +94,7 @@ CheckboxList.propTypes = {
   listItems: PropTypes.array,
   headerName: PropTypes.string,
   listItemStyle: PropTypes.object,
+  selectedListItem: PropTypes.array,
   headerStyle: PropTypes.object,
   onChange: PropTypes.func,
   onLoading: PropTypes.func,

@@ -43,7 +43,8 @@
     "react-native",
     "checkbox-list",
     "checklist",
-    "android"
+    "android",
+    "ios"
   ],
   "author": "Rinku",
   "license": "ISC",

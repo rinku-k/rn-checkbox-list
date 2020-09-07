@@ -16,6 +16,14 @@ The goal of `rn-checkbox-list` is to achieve the checkbox list with minimal effo
 <img src="/.github/loader.jpeg" height="500" />
 </p>
 
+## Support
+
+| CheckboxList version      |  Platform      |
+| ----------------      | ----------------      |
+|  >= 0.3 | Android, iOS, Windows |
+|  <=0.2  | Android |
+
+
 ## Setup
 
 This library is available on npm, install it with: `npm i rn-checkbox-list` or `yarn add rn-checkbox-list`.
@@ -74,5 +82,6 @@ For a example, take a look at the `/example` directory.
 - [x] Customisable checkbox colors
 - [x] Provide selected items and selected ids
 - [x] Support for default selected items
+- [x] Support iOS
 
 Pull requests, feedbacks and suggestions are welcome!

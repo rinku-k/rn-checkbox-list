@@ -1,6 +1,6 @@
 {
   "name": "rn-checkbox-list",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -9,7 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@react-native-community/checkbox": "^0.2.2"
+    "@react-native-community/checkbox": "^0.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

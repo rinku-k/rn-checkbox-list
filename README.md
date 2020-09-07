@@ -16,9 +16,20 @@ The goal of `rn-checkbox-list` is to achieve the checkbox list with minimal effo
 <img src="/.github/loader.jpeg" height="500" />
 </p>
 
+## Support
+
+| CheckboxList version      |  Platform      |
+| ----------------      | ----------------      |
+|  >= 0.3 | Android, iOS, Windows |
+|  <=0.2  | Android |
+
+
 ## Setup
 
-This library is available on npm, install it with: `npm i rn-checkbox-list` or `yarn add rn-checkbox-list`.
+This library is available on [npm](https://www.npmjs.com/package/rn-checkbox-list), install it with:
+`npm i rn-checkbox-list`
+or
+`yarn add rn-checkbox-list`
 
 ## Usage
 
@@ -50,6 +61,7 @@ import CheckboxList from "rn-checkbox-list";
 	listItems={data}
 	onChange={({ ids, items }) => console.log("My updated list :: ", ids)}
 	listItemStyle={{ borderBottomColor: '#eee', borderBottomWidth: 1 }}
+	checkboxProp={{ boxType: 'square' }} // iOS (supported from v0.3.0)
 	onLoading={() => (<LoaderComponent />)}
 />
 ```
@@ -63,6 +75,7 @@ For a example, take a look at the `/example` directory.
 | selectedListItems| object array | []          | List of selected items(subset of `listItems`)|
 | headerName       | string       | ''          | Shows header with the given name|
 | listItemStyle    | object 			| {}          | Each check list style|
+| checkboxProp    | object 			| {}          | Custom checkbox style|
 | headerStyle      | object       | {}          | Header check list style|
 | onChange      	 | function     | null        | Fires on each checkbox select or deselect|
 | onLoading      	 | function     | null    		| When the list is empty and a loader needs to be shown|
@@ -74,5 +87,6 @@ For a example, take a look at the `/example` directory.
 - [x] Customisable checkbox colors
 - [x] Provide selected items and selected ids
 - [x] Support for default selected items
+- [x] Support iOS
 
 Pull requests, feedbacks and suggestions are welcome!

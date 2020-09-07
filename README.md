@@ -71,6 +71,7 @@ For a example, take a look at the `/example` directory.
 | selectedListItems| object array | []          | List of selected items(subset of `listItems`)|
 | headerName       | string       | ''          | Shows header with the given name|
 | listItemStyle    | object 			| {}          | Each check list style|
+| checkboxStyle    | object 			| {}          | Custom checkbox style|
 | headerStyle      | object       | {}          | Header check list style|
 | onChange      	 | function     | null        | Fires on each checkbox select or deselect|
 | onLoading      	 | function     | null    		| When the list is empty and a loader needs to be shown|

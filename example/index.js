@@ -45,6 +45,7 @@ class Selector extends Component {
           </View>
         )}
         selectedListItems={data.slice(0, 4)}
+        checkboxStyle={{ boxType: 'square' }} // iOS (supported from v0.3.0)
         // listItemStyle={{ borderBottomColor: '#eee', borderBottomWidth: 1 }}
       />
     );

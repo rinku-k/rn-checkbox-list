@@ -1,18 +1,15 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import CheckBox from '@react-native-community/checkbox';
+import CheckBox from './checkbox';
 import PropTypes from 'prop-types';
 import Touchable from './touchable';
 
 const CheckListItem = ({ children, text, style, checkboxProp, onPress, isActive, theme }) => (
   <Touchable onPress={onPress} style={{ padding: 10, flexDirection: 'row', alignItems: 'center', ...style }}>
     <CheckBox
-      tintColors={{ true: theme, false: '#626262' }}
-      tintColor="#626262"
-      onTintColor={theme}
-      onCheckColor={theme}
-      value={isActive}
-      {...checkboxProp}
+      theme={theme}
+      isActive={isActive}
+      checkboxProp={checkboxProp}
     />
     { !!text &&
       <View style={{ flex: 1 }}>

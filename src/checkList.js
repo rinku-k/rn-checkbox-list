@@ -66,6 +66,7 @@ class CheckboxList extends Component {
             text={headerName}
             onPress={this.selectAllItems}
             style={headerStyle}
+            checkboxProp={checkboxProp}
           />
         }
         { !listItems.length ? onLoading() :

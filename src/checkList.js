@@ -23,7 +23,7 @@ class CheckboxList extends Component {
     this.setState({
       selectedIndexes: [],
       selectedListItems: [],
-    })
+    });
   }
 
   selectAllItems() {
@@ -55,7 +55,7 @@ class CheckboxList extends Component {
   }
 
   render() {
-    const { listItems, headerName, listItemStyle, checkboxStyle, headerStyle, theme, onLoading } = this.props;
+    const { listItems, headerName, listItemStyle, checkboxProp, headerStyle, theme, onLoading } = this.props;
     const { selectedIndexes } = this.state;
     return (
       <View style={{ flex: 1 }}>
@@ -77,7 +77,7 @@ class CheckboxList extends Component {
               isActive={selectedIndexes.indexOf(data.id) > -1}
               text={data.name}
               onPress={() => this.selectCurrentItem(data)}
-              checkboxStyle={checkboxStyle}
+              checkboxProp={checkboxProp}
               style={listItemStyle}
             />
           ))}
@@ -93,7 +93,7 @@ CheckboxList.propTypes = {
   selectedListItems: PropTypes.array,
   headerName: PropTypes.string,
   listItemStyle: PropTypes.object,
-  checkboxStyle: PropTypes.object,
+  checkboxProp: PropTypes.object,
   headerStyle: PropTypes.object,
   onChange: PropTypes.func,
   onLoading: PropTypes.func,
@@ -105,12 +105,12 @@ CheckboxList.defaultProps = {
   selectedListItems: [],
   headerName: '',
   listItemStyle: {},
-  checkboxStyle: {},
+  checkboxProp: {},
   headerStyle: {},
   onChange: () => {},
   onLoading: () => null,
   theme: '#1A237E',
-}
+};
 
 export default CheckboxList;
 

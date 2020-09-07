@@ -4,7 +4,7 @@ import CheckBox from '@react-native-community/checkbox';
 import PropTypes from 'prop-types';
 import Touchable from './touchable';
 
-const CheckListItem = ({ children, text, style, checkboxStyle, onPress, isActive, theme }) => (
+const CheckListItem = ({ children, text, style, checkboxProp, onPress, isActive, theme }) => (
   <Touchable onPress={onPress} style={{ padding: 10, flexDirection: 'row', alignItems: 'center', ...style }}>
     <CheckBox
       tintColors={{ true: theme, false: '#626262' }}
@@ -12,7 +12,7 @@ const CheckListItem = ({ children, text, style, checkboxStyle, onPress, isActive
       onTintColor={theme}
       onCheckColor={theme}
       value={isActive}
-      {...checkboxStyle}
+      {...checkboxProp}
     />
     { !!text &&
       <View style={{ flex: 1 }}>
@@ -27,7 +27,7 @@ CheckListItem.propTypes = {
   children: PropTypes.node,
   text: PropTypes.string,
   style: PropTypes.object,
-  checkboxStyle: PropTypes.object,
+  checkboxProp: PropTypes.object,
   onPress: PropTypes.func,
   theme: PropTypes.string.isRequired,
 };
@@ -36,7 +36,7 @@ CheckListItem.defaultProps = {
   children: null,
   text: '',
   style: {},
-  checkboxStyle: {},
+  checkboxProp: {},
   onPress: () => {},
 };
 

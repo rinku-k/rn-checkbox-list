@@ -24,11 +24,11 @@ class Selector extends Component {
     super(props);
     this.state = {
       loader: true,
-    }
+    };
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({ loader: false }), 500); 
+    setTimeout(() => this.setState({ loader: false }), 500);
   }
 
   render() {
@@ -37,7 +37,7 @@ class Selector extends Component {
         headerName="Movies"
         theme="red"
         listItems={this.state.loader ? [] : data}
-        onChange={({ ids, items }) => console.log("My updated list :: ", items)}
+        onChange={({ ids, items }) => console.log('My updated list :: ', items)}
         onLoading={() => (
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <ActivityIndicator size="large" color="red" />
@@ -45,7 +45,7 @@ class Selector extends Component {
           </View>
         )}
         selectedListItems={data.slice(0, 4)}
-        checkboxStyle={{ boxType: 'square' }} // iOS (supported from v0.3.0)
+        checkboxProp={{ boxType: 'square', tintColors: { true: "purple", false: 'green' } }} // iOS (supported from v0.3.0)
         // listItemStyle={{ borderBottomColor: '#eee', borderBottomWidth: 1 }}
       />
     );

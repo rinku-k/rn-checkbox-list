@@ -18,7 +18,7 @@ The goal of `rn-checkbox-list` is to achieve the checkbox list with minimal effo
 
 ## Support
 
-| CheckboxList version      |  Platform      |
+| rn-checkbox-list version      |  Platform      |
 | ----------------      | ----------------      |
 |  >= 0.3 | Android, iOS, Windows |
 |  <=0.2  | Android |

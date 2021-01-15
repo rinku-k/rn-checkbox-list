@@ -5,7 +5,7 @@
 The goal of `rn-checkbox-list` is to achieve the checkbox list with minimal effort and easy customisation.
 
 <p align="center">
-  <img src="/.github/demo.gif" height="500" />
+  <img src="/.github/demo.gif" height="500" align="left" />
   <img src="/.github/ios.gif" height="500" />
 </p>
 
@@ -77,7 +77,7 @@ import CheckboxList from 'rn-checkbox-list';
 />
 ```
 
-To check for complete example [here](https://github.com/rinku-k/rn-checkbox-list/blob/master/example/index.js).
+Check for complete example [here](https://github.com/rinku-k/rn-checkbox-list/blob/master/example/index.js).
 
 ## Available props
 

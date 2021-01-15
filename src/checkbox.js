@@ -1,27 +1,39 @@
 import React from 'react';
 import CheckBox from '@react-native-community/checkbox';
 import PropTypes from 'prop-types';
+import { Platform } from 'react-native';
 
 const CustomCheckBox = ({ checkboxProp, isActive, theme }) => (
   <CheckBox
-    tintColors={{ true: theme, false: '#626262' }}
-    tintColor="#626262"
-    onTintColor={theme}
-    onCheckColor={theme}
     value={isActive}
+    {...Platform.select({
+      ios: {
+        tintColor: '#626262',
+        onTintColor: theme,
+        onCheckColor: '#fff',
+        onFillColor: theme
+      },
+      android: { tintColors: { true: theme, false: '#626262' } }
+    })}
     {...checkboxProp}
+    style={{
+      ...Platform.select({
+        ios: { marginRight: 8, marginVertical: 7, height: 18, width: 18 }
+      }),
+      ...checkboxProp.style
+    }}
   />
 );
 
 CustomCheckBox.propTypes = {
   checkboxProp: PropTypes.object,
   theme: PropTypes.string.isRequired,
-  isActive: PropTypes.bool,
+  isActive: PropTypes.bool
 };
 
 CustomCheckBox.defaultProps = {
   checkboxProp: {},
-  isActive: false,
+  isActive: false
 };
 
 export default CustomCheckBox;

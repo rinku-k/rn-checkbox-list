@@ -35,7 +35,7 @@ class Selector extends Component {
   }
 
   componentDidMount() {
-    // setTimeout(() => this.setState({ loader: false }), 500);
+    setTimeout(() => this.setState({ loader: false }), 500);
   }
 
   render() {

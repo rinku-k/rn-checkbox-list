@@ -69,6 +69,7 @@ index.js
 .flowconfig
 .gitattributes
 .prettierrc.js
+.prettierrc
 .watchmanconfig
 .buckconfig
 metro.config.js

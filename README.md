@@ -1,6 +1,9 @@
 # rn-checkbox-list
 
 ![npm version](https://badge.fury.io/js/rn-checkbox-list.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/rinku-k/rn-checkbox-list/badge)](https://www.codefactor.io/repository/github/rinku-k/rn-checkbox-list)
+[![Coverage Status](https://coveralls.io/repos/github/rinku-k/rn-checkbox-list/badge.svg?branch=master)](https://coveralls.io/github/rinku-k/rn-checkbox-list?branch=master)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1e95eb5c852c4b3f886b70ece11aedba)](https://www.codacy.com/gh/rinku-k/rn-checkbox-list/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=rinku-k/rn-checkbox-list&amp;utm_campaign=Badge_Grade)
 
 The goal of `rn-checkbox-list` is to achieve the checkbox list with minimal effort and easy customisation.
 

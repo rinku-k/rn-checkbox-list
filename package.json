@@ -21,7 +21,7 @@
     "metro-react-native-babel-preset": "^0.56.4",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react-native": "0.62.3",
     "react-test-renderer": "16.9.0"
   },
   "jest": {

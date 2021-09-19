@@ -3,7 +3,7 @@
 ![npm version](https://badge.fury.io/js/rn-checkbox-list.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/rinku-k/rn-checkbox-list/badge)](https://www.codefactor.io/repository/github/rinku-k/rn-checkbox-list)
 [![Coverage Status](https://coveralls.io/repos/github/rinku-k/rn-checkbox-list/badge.svg?branch=master)](https://coveralls.io/github/rinku-k/rn-checkbox-list?branch=master)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1e95eb5c852c4b3f886b70ece11aedba)](https://www.codacy.com/gh/rinku-k/rn-checkbox-list/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=rinku-k/rn-checkbox-list&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1e95eb5c852c4b3f886b70ece11aedba)](https://www.codacy.com/gh/rinku-k/rn-checkbox-list/dashboard?utm_source=github.com&utm_medium=referral&utm_content=rinku-k/rn-checkbox-list&utm_campaign=Badge_Grade)
 
 The goal of `rn-checkbox-list` is to achieve the checkbox list with minimal effort and easy customisation.
 
@@ -34,10 +34,11 @@ The goal of `rn-checkbox-list` is to achieve the checkbox list with minimal effo
 
 ## Support
 
-| rn-checkbox-list version | Platform              |
-| ------------------------ | --------------------- |
-| > 0.3                    | Android, iOS, Windows |
-| <=0.2                    | Android               |
+| rn-checkbox-list version | Platform              | RN Version |
+| ------------------------ | --------------------- | ---------- |
+| >= 1.0.0                 | Android, iOS, Windows | >=0.62.3   |
+| > 0.3                    | Android, iOS, Windows | 0.61.5     |
+| <=0.2                    | Android               | 0.61.5     |
 
 ## Setup
 
@@ -45,6 +46,8 @@ This library is available on [npm](https://www.npmjs.com/package/rn-checkbox-lis
 `npm i rn-checkbox-list`
 or
 `yarn add rn-checkbox-list`
+
+NOTE: If you dont find `@react-native-community/checkbox` in package.json, install it manually.
 
 ## Usage
 
@@ -57,7 +60,10 @@ import CheckboxList from 'rn-checkbox-list';
 2.  Create data with id and name:
 
 ```javascript
-[{ id: 1, name: 'Green Book' }, { id: 2, name: 'Bohemian Rhapsody' }];
+[
+  { id: 1, name: 'Green Book' },
+  { id: 2, name: 'Bohemian Rhapsody' },
+];
 ```
 
 3.  Add data to imported component

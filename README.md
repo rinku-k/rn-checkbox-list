@@ -43,11 +43,9 @@ The goal of `rn-checkbox-list` is to achieve the checkbox list with minimal effo
 ## Setup
 
 This library is available on [npm](https://www.npmjs.com/package/rn-checkbox-list), install it with:
-`npm i rn-checkbox-list`
+`npm i @react-native-community/checkbox rn-checkbox-list`
 or
-`yarn add rn-checkbox-list`
-
-NOTE: If you dont find `@react-native-community/checkbox` in package.json, install it manually.
+`yarn add @react-native-community/checkbox rn-checkbox-list`
 
 ## Usage
 

@@ -9,7 +9,7 @@ class CheckboxList extends Component {
     super(props);
     this.state = {
       selectedIndexes: props.selectedListItems.map(item => item.id),
-      selectedListItems: props.selectedListItems
+      selectedListItems: props.selectedListItems,
     };
     this.selectAllItems = this.selectAllItems.bind(this);
   }
@@ -17,7 +17,7 @@ class CheckboxList extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     this.props.onChange({
       ids: nextState.selectedIndexes,
-      items: nextState.selectedListItems
+      items: nextState.selectedListItems,
     });
     return true;
   }
@@ -25,7 +25,7 @@ class CheckboxList extends Component {
   unSelectAllItem() {
     this.setState({
       selectedIndexes: [],
-      selectedListItems: []
+      selectedListItems: [],
     });
   }
 
@@ -35,7 +35,7 @@ class CheckboxList extends Component {
     if (selectedIndexes.length < listItems.length) {
       this.setState({
         selectedIndexes: listItems.map(item => item.id),
-        selectedListItems: [...listItems]
+        selectedListItems: [...listItems],
       });
     } else {
       this.unSelectAllItem();
@@ -45,7 +45,7 @@ class CheckboxList extends Component {
   selectCurrentItem(data) {
     const {
       selectedIndexes: currentSelectedIds,
-      selectedListItems: currentSelectedItems
+      selectedListItems: currentSelectedItems,
     } = this.state;
     const currentSelectedIndex = currentSelectedIds.indexOf(data.id);
     if (currentSelectedIndex > -1) {
@@ -57,7 +57,7 @@ class CheckboxList extends Component {
     }
     this.setState({
       selectedIndexes: currentSelectedIds,
-      selectedListItems: currentSelectedItems
+      selectedListItems: currentSelectedItems,
     });
   }
 
@@ -69,7 +69,7 @@ class CheckboxList extends Component {
       checkboxProp,
       headerStyle,
       theme,
-      onLoading
+      onLoading,
     } = this.props;
     const { selectedIndexes } = this.state;
     return (
@@ -118,7 +118,7 @@ CheckboxList.propTypes = {
   headerStyle: PropTypes.object,
   onChange: PropTypes.func,
   onLoading: PropTypes.func,
-  theme: PropTypes.string
+  theme: PropTypes.string,
 };
 
 CheckboxList.defaultProps = {
@@ -130,7 +130,7 @@ CheckboxList.defaultProps = {
   headerStyle: {},
   onChange: () => {},
   onLoading: () => null,
-  theme: '#1A237E'
+  theme: '#1A237E',
 };
 
 export default CheckboxList;

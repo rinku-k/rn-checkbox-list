@@ -5,7 +5,7 @@ import {
   Text,
   ActivityIndicator,
   SafeAreaView,
-  Platform
+  Platform,
 } from 'react-native';
 
 const data = [
@@ -23,14 +23,14 @@ const data = [
   { id: 12, name: 'Free Solo' },
   { id: 13, name: 'Period. End of Sentence.' },
   { id: 14, name: 'Skin' },
-  { id: 15, name: 'Spider-Man: Into the Spider-Verse' }
+  { id: 15, name: 'Spider-Man: Into the Spider-Verse' },
 ];
 
 class Selector extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loader: true
+      loader: true,
     };
   }
 
@@ -53,9 +53,8 @@ class Selector extends Component {
               style={{
                 flex: 1,
                 justifyContent: 'center',
-                alignItems: 'center'
-              }}
-            >
+                alignItems: 'center',
+              }}>
               <ActivityIndicator size="large" color="red" />
               <Text style={{ fontSize: 16, color: '#555555' }}>
                 Loading....
@@ -71,11 +70,14 @@ class Selector extends Component {
               tintColor: border,
               onTintColor: theme,
               onCheckColor: '#fff',
-              onFillColor: theme
+              onFillColor: theme,
             },
             android: {
-              tintColors: { true: theme, false: border }
-            }
+              tintColors: {
+                true: theme,
+                false: border,
+              },
+            },
           })}
           // listItemStyle={{ borderBottomColor: "#eee", borderBottomWidth: 1 }}
         />

@@ -1,5 +1,10 @@
 import React from 'react';
-import { StyleProp, TextStyle, ViewStyle, ColorValue } from 'react-native';
+import { ColorValue, StyleProp, ViewStyle } from 'react-native';
+
+export interface listItem {
+  id?: number | string;
+  name?: string;
+}
 
 export interface CheckBoxProps {
   listItems?: listItem[];
@@ -11,11 +16,6 @@ export interface CheckBoxProps {
   onChange?: () => void;
   onLoading?: () => void;
   theme?: StyleProp<ColorValue>;
-}
-
-export interface listItem {
-  id?: number | string;
-  name?: string;
 }
 
 export default class CheckBoxList extends React.Component<CheckBoxProps> {}

@@ -11,16 +11,16 @@ const CustomCheckBox = ({ checkboxProp, isActive, theme }) => (
         tintColor: '#626262',
         onTintColor: theme,
         onCheckColor: '#fff',
-        onFillColor: theme
+        onFillColor: theme,
       },
-      android: { tintColors: { true: theme, false: '#626262' } }
+      android: { tintColors: { true: theme, false: '#626262' } },
     })}
     {...checkboxProp}
     style={{
       ...Platform.select({
-        ios: { marginRight: 8, marginVertical: 7, height: 18, width: 18 }
+        ios: { marginRight: 8, marginVertical: 7, height: 18, width: 18 },
       }),
-      ...checkboxProp.style
+      ...checkboxProp.style,
     }}
   />
 );
@@ -28,12 +28,12 @@ const CustomCheckBox = ({ checkboxProp, isActive, theme }) => (
 CustomCheckBox.propTypes = {
   checkboxProp: PropTypes.object,
   theme: PropTypes.string.isRequired,
-  isActive: PropTypes.bool
+  isActive: PropTypes.bool,
 };
 
 CustomCheckBox.defaultProps = {
   checkboxProp: {},
-  isActive: false
+  isActive: false,
 };
 
 export default CustomCheckBox;

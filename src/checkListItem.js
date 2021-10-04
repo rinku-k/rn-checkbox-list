@@ -11,7 +11,7 @@ const CheckListItem = ({
   checkboxProp,
   onPress,
   isActive,
-  theme
+  theme,
 }) => (
   <Touchable
     onPress={onPress}
@@ -19,9 +19,8 @@ const CheckListItem = ({
       padding: 10,
       flexDirection: 'row',
       alignItems: 'center',
-      ...style
-    }}
-  >
+      ...style,
+    }}>
     <CheckBox theme={theme} isActive={isActive} checkboxProp={checkboxProp} />
     {!!text && (
       <View style={{ flex: 1 }}>
@@ -40,7 +39,7 @@ CheckListItem.propTypes = {
   style: PropTypes.object,
   checkboxProp: PropTypes.object,
   onPress: PropTypes.func,
-  theme: PropTypes.string.isRequired
+  theme: PropTypes.string.isRequired,
 };
 
 CheckListItem.defaultProps = {
@@ -48,7 +47,7 @@ CheckListItem.defaultProps = {
   text: '',
   style: {},
   checkboxProp: {},
-  onPress: () => {}
+  onPress: () => {},
 };
 
 export default CheckListItem;

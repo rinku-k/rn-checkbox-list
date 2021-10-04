@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleProp, TextStyle, ViewStyle, ColorValue } from 'react-native';
+import { ColorValue, StyleProp, ViewStyle } from 'react-native';
 
 export interface CheckBoxProps {
   listItems?: listItem[];

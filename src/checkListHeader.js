@@ -4,18 +4,34 @@ import CheckBox from './checkbox';
 import PropTypes from 'prop-types';
 import Touchable from './touchable';
 
-const CheckListHeader = ({ children, text, style, checkboxProp, onPress, isActive, theme }) => (
-  <Touchable onPress={onPress} style={{ padding: 10, flexDirection: 'row', alignItems: 'center', backgroundColor: '#F2F6FC', ...style }}>
-    <CheckBox
-      theme={theme}
-      isActive={isActive}
-      checkboxProp={checkboxProp}
-    />
-    { !!text &&
+const CheckListHeader = ({
+  children,
+  text,
+  style,
+  checkboxProp,
+  onPress,
+  isActive,
+  theme,
+}) => (
+  <Touchable
+    onPress={onPress}
+    style={{
+      padding: 10,
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#F2F6FC',
+      ...style,
+    }}>
+    <CheckBox theme={theme} isActive={isActive} checkboxProp={checkboxProp} />
+    {!!text && (
       <View style={{ flex: 1 }}>
-        <Text numberOfLines={1} style={{ color: '#212121', fontWeight: 'bold', fontSize: 16 }}>{text}</Text>
+        <Text
+          numberOfLines={1}
+          style={{ color: '#212121', fontWeight: 'bold', fontSize: 16 }}>
+          {text}
+        </Text>
       </View>
-    }
+    )}
     {children}
   </Touchable>
 );

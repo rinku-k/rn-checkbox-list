@@ -137,7 +137,17 @@ CheckboxList.defaultProps = {
       color: '#626262',
     },
   },
-  headerStyle: {},
+  headerStyle: {
+    padding: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F2F6FC',
+    text: {
+      color: '#212121',
+      fontWeight: 'bold',
+      fontSize: 16,
+    },
+  },
   onChange: () => {},
   onLoading: () => null,
   theme: '#1A237E',

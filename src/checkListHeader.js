@@ -13,21 +13,11 @@ const CheckListHeader = ({
   isActive,
   theme,
 }) => (
-  <Touchable
-    onPress={onPress}
-    style={{
-      padding: 10,
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: '#F2F6FC',
-      ...style,
-    }}>
+  <Touchable onPress={onPress} style={{ ...style }}>
     <CheckBox theme={theme} isActive={isActive} checkboxProp={checkboxProp} />
     {!!text && (
       <View style={{ flex: 1 }}>
-        <Text
-          numberOfLines={1}
-          style={{ color: '#212121', fontWeight: 'bold', fontSize: 16 }}>
+        <Text numberOfLines={1} style={{ ...style.text }}>
           {text}
         </Text>
       </View>

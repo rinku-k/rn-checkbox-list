@@ -12,6 +12,7 @@ export interface CheckBoxProps {
   headerName?: string;
   listItemStyle?: StyleProp<ViewStyle>;
   checkboxProp?: object;
+  textProp?: object;
   headerStyle?: StyleProp<ViewStyle>;
   onChange?: () => void;
   onLoading?: () => void;

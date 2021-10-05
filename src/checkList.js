@@ -67,6 +67,7 @@ class CheckboxList extends Component {
       headerName,
       listItemStyle,
       checkboxProp,
+      textProp,
       headerStyle,
       theme,
       onLoading,
@@ -99,6 +100,7 @@ class CheckboxList extends Component {
                 text={data.name}
                 onPress={() => this.selectCurrentItem(data)}
                 checkboxProp={checkboxProp}
+                textProp={textProp}
                 style={listItemStyle}
               />
             ))}
@@ -115,6 +117,7 @@ CheckboxList.propTypes = {
   headerName: PropTypes.string,
   listItemStyle: PropTypes.object,
   checkboxProp: PropTypes.object,
+  textProp: PropTypes.object,
   headerStyle: PropTypes.object,
   onChange: PropTypes.func,
   onLoading: PropTypes.func,
@@ -127,6 +130,13 @@ CheckboxList.defaultProps = {
   headerName: '',
   listItemStyle: {},
   checkboxProp: {},
+  textProp: {
+    numberOfLines: 1,
+    style: {
+      fontSize: 14,
+      color: '#626262',
+    },
+  },
   headerStyle: {},
   onChange: () => {},
   onLoading: () => null,

@@ -20,11 +20,20 @@ const data = [
   { id: 9, name: 'First Man' },
   { id: 10, name: 'If Beale Street Could Talk' },
   { id: 11, name: 'Bao' },
-  { id: 12, name: 'Free Solo' },
-  { id: 13, name: 'Period. End of Sentence.' },
-  { id: 14, name: 'Skin' },
-  { id: 15, name: 'Spider-Man: Into the Spider-Verse' },
+  { id: 12, name: 'Harry Potter and the Deathly Hallows – Part 1' },
+  { id: 13, name: 'Free Solo' },
+  { id: 14, name: 'Period. End of Sentence.' },
+  { id: 15, name: 'Skin' },
+  { id: 16, name: 'Spider-Man: Into the Spider-Verse' },
 ];
+
+const textProp = {
+  numberOfLines: 1,
+  style: {
+    fontSize: 20,
+    color: '#626262',
+  },
+};
 
 class Selector extends Component {
   constructor(props) {
@@ -79,6 +88,7 @@ class Selector extends Component {
               },
             },
           })}
+          textProp={textProp}
           // listItemStyle={{ borderBottomColor: "#eee", borderBottomWidth: 1 }}
         />
       </SafeAreaView>

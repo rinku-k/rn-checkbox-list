@@ -9,6 +9,7 @@ const CheckListItem = ({
   text,
   style,
   checkboxProp,
+  textProp,
   onPress,
   isActive,
   theme,
@@ -24,9 +25,7 @@ const CheckListItem = ({
     <CheckBox theme={theme} isActive={isActive} checkboxProp={checkboxProp} />
     {!!text && (
       <View style={{ flex: 1 }}>
-        <Text numberOfLines={1} style={{ fontSize: 14, color: '#626262' }}>
-          {text}
-        </Text>
+        <Text {...textProp}>{text}</Text>
       </View>
     )}
     {children}
@@ -47,6 +46,7 @@ CheckListItem.defaultProps = {
   text: '',
   style: {},
   checkboxProp: {},
+  textProp: {},
   onPress: () => {},
 };
 

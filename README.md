@@ -92,18 +92,18 @@ Check for complete example [here](https://github.com/rinku-k/rn-checkbox-list/bl
 
 ## Available props
 
-| Name              | Type         | Default                                                          | Description                                           |
-| ----------------- | ------------ | ---------------------------------------------------------------- | ----------------------------------------------------- |
-| listItems         | object array | []                                                               | List of checkboxes                                    |
-| selectedListItems | object array | []                                                               | List of selected items(subset of `listItems`)         |
-| headerName        | string       | ''                                                               | Shows header with the given name                      |
-| listItemStyle     | object       | {}                                                               | Each check list style                                 |
-| checkboxProp      | object       | {}                                                               | Custom checkbox style                                 |
-| textProp          | object       | `{ numberOfLines: 1, style: {fontSize: 14, color: '#626262',},}` | Props for checkbox Text component                     |
-| headerStyle       | object       | {}                                                               | Header check list style                               |
-| onChange          | function     | null                                                             | Fires on each checkbox select or deselect             |
-| onLoading         | function     | null                                                             | When the list is empty and a loader needs to be shown |
-| theme             | string       | #1A237E                                                          | Custom theme color for checkbox                       |
+| Name              | Type         | Default                                                                                                                                             | Description                                           |
+| ----------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| listItems         | object array | []                                                                                                                                                  | List of checkboxes                                    |
+| selectedListItems | object array | []                                                                                                                                                  | List of selected items(subset of `listItems`)         |
+| headerName        | string       | ''                                                                                                                                                  | Shows header with the given name                      |
+| listItemStyle     | object       | {}                                                                                                                                                  | Each check list style                                 |
+| checkboxProp      | object       | {}                                                                                                                                                  | Custom checkbox style                                 |
+| textProp          | object       | `{ numberOfLines: 1, style: {fontSize: 14, color: '#626262',},}`                                                                                    | Props for checkbox Text component                     |
+| headerStyle       | object       | `{ padding: 10, flexDirection: 'row', alignItems: 'center', backgroundColor: 'black', text: { color: 'white', fontWeight: 'bold', fontSize: 16,},}` | Header check list style                               |
+| onChange          | function     | null                                                                                                                                                | Fires on each checkbox select or deselect             |
+| onLoading         | function     | null                                                                                                                                                | When the list is empty and a loader needs to be shown |
+| theme             | string       | #1A237E                                                                                                                                             | Custom theme color for checkbox                       |
 
 ## Improvements
 

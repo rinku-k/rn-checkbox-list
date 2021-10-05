@@ -112,14 +112,5 @@ Check for complete example [here](https://github.com/rinku-k/rn-checkbox-list/bl
 - [x] Provide selected items and selected ids
 - [x] Support for default selected items
 - [x] Support iOS
-- [ ] Video for "listitem []" order
-- [ ] testId (for testing) (This is not recommended, should we still add?)
-- [x] Codacy fixes
-- [ ] Text styling customization
-  - [ ] multiline text support
-- [x] ts definition file (types file)
-- [ ] max selection count (like select 2 answers)
-- [ ] CONTRIBUTING.md
-- [ ] CODE OF CONDUCT md
 
 Pull requests, feedbacks and suggestions are welcome!

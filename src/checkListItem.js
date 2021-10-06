@@ -1,18 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import CheckBox from './checkbox';
 import PropTypes from 'prop-types';
 import Touchable from './touchable';
 
 const CheckListItem = ({
   children,
-  text,
+  item,
   style,
   checkboxProp,
-  textProp,
   onPress,
   isActive,
   theme,
+  renderItem,
 }) => (
   <Touchable
     onPress={onPress}
@@ -23,11 +23,7 @@ const CheckListItem = ({
       ...style,
     }}>
     <CheckBox theme={theme} isActive={isActive} checkboxProp={checkboxProp} />
-    {!!text && (
-      <View style={{ flex: 1 }}>
-        <Text {...textProp}>{text}</Text>
-      </View>
-    )}
+    {!!item && <View style={{ flex: 1 }}>{renderItem({ item: item })}</View>}
     {children}
   </Touchable>
 );
@@ -43,10 +39,9 @@ CheckListItem.propTypes = {
 
 CheckListItem.defaultProps = {
   children: null,
-  text: '',
+  item: null,
   style: {},
   checkboxProp: {},
-  textProp: {},
   onPress: () => {},
 };
 

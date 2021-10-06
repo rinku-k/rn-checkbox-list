@@ -12,11 +12,11 @@ export interface CheckBoxProps {
   headerName?: string;
   listItemStyle?: StyleProp<ViewStyle>;
   checkboxProp?: object;
-  textProp?: object;
   headerStyle?: StyleProp<ViewStyle>;
   onChange?: () => void;
   onLoading?: () => void;
   theme?: StyleProp<ColorValue>;
+  renderItem?: () => void;
 }
 
 export default class CheckBoxList extends React.Component<CheckBoxProps> {}

@@ -6,33 +6,27 @@ import {
   ActivityIndicator,
   SafeAreaView,
   Platform,
+  Image,
 } from 'react-native';
+import Emojis from './images';
 
-const data = [
-  { id: 1, name: 'Green Book' },
-  { id: 2, name: 'Bohemian Rhapsody' },
-  { id: 3, name: 'Roma' },
-  { id: 4, name: 'Black Panther' },
-  { id: 5, name: 'The Favourite' },
-  { id: 6, name: 'A Star Is Born' },
-  { id: 7, name: 'Vice' },
-  { id: 8, name: 'BlacKkKlansman' },
-  { id: 9, name: 'First Man' },
-  { id: 10, name: 'If Beale Street Could Talk' },
-  { id: 11, name: 'Bao' },
-  { id: 12, name: 'Harry Potter and the Deathly Hallows – Part 1' },
-  { id: 13, name: 'Free Solo' },
-  { id: 14, name: 'Period. End of Sentence.' },
-  { id: 15, name: 'Skin' },
-  { id: 16, name: 'Spider-Man: Into the Spider-Verse' },
-];
+const data = Emojis;
 
-const textProp = {
-  numberOfLines: 1,
-  style: {
-    fontSize: 20,
-    color: '#626262',
-  },
+const renderItem = ({ item }) => {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <Image source={item.src} style={{ width: 50, height: 50 }} />
+      <Text
+        numberOfLines={1}
+        style={{
+          fontSize: 20,
+          color: '#626262',
+          margin: 10,
+        }}>
+        {item.name}
+      </Text>
+    </View>
+  );
 };
 
 class Selector extends Component {
@@ -53,7 +47,7 @@ class Selector extends Component {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <CheckboxList
-          headerName="Movies"
+          headerName="Emojis"
           theme={theme}
           listItems={this.state.loader ? [] : data}
           onChange={({ ids, items }) => console.log('My updated list :: ', ids)}
@@ -88,7 +82,7 @@ class Selector extends Component {
               },
             },
           })}
-          textProp={textProp}
+          renderItem={renderItem}
           // listItemStyle={{ borderBottomColor: "#eee", borderBottomWidth: 1 }}
         />
       </SafeAreaView>

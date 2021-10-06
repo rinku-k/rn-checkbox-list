@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import CheckListItem from './checkListItem';
 import CheckListHeader from './checkListHeader';
@@ -67,10 +67,10 @@ class CheckboxList extends Component {
       headerName,
       listItemStyle,
       checkboxProp,
-      textProp,
       headerStyle,
       theme,
       onLoading,
+      renderItem,
     } = this.props;
     const { selectedIndexes } = this.state;
     return (
@@ -92,16 +92,16 @@ class CheckboxList extends Component {
           onLoading()
         ) : (
           <ScrollView>
-            {listItems.map(data => (
+            {listItems.map(item => (
               <CheckListItem
                 theme={theme}
-                key={`${data.id}`}
-                isActive={selectedIndexes.indexOf(data.id) > -1}
-                text={data.name}
-                onPress={() => this.selectCurrentItem(data)}
+                key={`${item.id}`}
+                isActive={selectedIndexes.indexOf(item.id) > -1}
+                item={item}
+                onPress={() => this.selectCurrentItem(item)}
                 checkboxProp={checkboxProp}
-                textProp={textProp}
                 style={listItemStyle}
+                renderItem={renderItem}
               />
             ))}
           </ScrollView>
@@ -117,11 +117,31 @@ CheckboxList.propTypes = {
   headerName: PropTypes.string,
   listItemStyle: PropTypes.object,
   checkboxProp: PropTypes.object,
-  textProp: PropTypes.object,
   headerStyle: PropTypes.object,
   onChange: PropTypes.func,
   onLoading: PropTypes.func,
   theme: PropTypes.string,
+  renderItem: PropTypes.func,
+};
+
+const defaultTextProp = {
+  numberOfLines: 1,
+  style: {
+    fontSize: 14,
+    color: '#626262',
+  },
+};
+
+const defaultHeaderStyle = {
+  padding: 10,
+  flexDirection: 'row',
+  alignItems: 'center',
+  backgroundColor: '#F2F6FC',
+  text: {
+    color: '#212121',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
 };
 
 CheckboxList.defaultProps = {
@@ -130,27 +150,11 @@ CheckboxList.defaultProps = {
   headerName: '',
   listItemStyle: {},
   checkboxProp: {},
-  textProp: {
-    numberOfLines: 1,
-    style: {
-      fontSize: 14,
-      color: '#626262',
-    },
-  },
-  headerStyle: {
-    padding: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#F2F6FC',
-    text: {
-      color: '#212121',
-      fontWeight: 'bold',
-      fontSize: 16,
-    },
-  },
+  headerStyle: defaultHeaderStyle,
   onChange: () => {},
   onLoading: () => null,
   theme: '#1A237E',
+  renderItem: ({ item }) => <Text {...defaultTextProp}>{item.name}</Text>,
 };
 
 export default CheckboxList;

@@ -27,14 +27,6 @@ const data = [
   { id: 16, name: 'Spider-Man: Into the Spider-Verse' },
 ];
 
-const textProp = {
-  numberOfLines: 1,
-  style: {
-    fontSize: 20,
-    color: '#626262',
-  },
-};
-
 class Selector extends Component {
   constructor(props) {
     super(props);
@@ -56,7 +48,10 @@ class Selector extends Component {
           headerName="Movies"
           theme={theme}
           listItems={this.state.loader ? [] : data}
-          onChange={({ ids, items }) => console.log('My updated list :: ', ids)}
+          onChange={({ ids, items }) => {
+            // eslint-disable-next-line no-console
+            console.log('My updated list :: ', ids);
+          }}
           onLoading={() => (
             <View
               style={{
@@ -88,7 +83,6 @@ class Selector extends Component {
               },
             },
           })}
-          textProp={textProp}
           // listItemStyle={{ borderBottomColor: "#eee", borderBottomWidth: 1 }}
         />
       </SafeAreaView>

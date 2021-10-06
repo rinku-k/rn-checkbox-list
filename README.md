@@ -10,6 +10,7 @@ The goal of `rn-checkbox-list` is to achieve the checkbox list with minimal effo
 <p align="center">
   <img src="/.github/demo.gif" height="500" align="left" />
   <img src="/.github/ios.gif" height="500" />
+  <img src="/.github/custom_render_component.jpg" height="500" align="right">
 </p>
 
 <details>
@@ -77,13 +78,6 @@ import CheckboxList from 'rn-checkbox-list';
   onChange={({ ids, items }) => console.log('My updated list :: ', ids)}
   listItemStyle={{ borderBottomColor: '#eee', borderBottomWidth: 1 }}
   checkboxProp={{ boxType: 'square' }} // iOS (supported from v0.3.0)
-  textProp={{
-    numberOfLines: 1,
-    style: {
-      fontSize: 20,
-      color: '#626262',
-    },
-  }}
   onLoading={() => <LoaderComponent />}
 />
 ```
@@ -99,11 +93,13 @@ Check for complete example [here](https://github.com/rinku-k/rn-checkbox-list/bl
 | headerName        | string       | ''                                                                                                                                                  | Shows header with the given name                      |
 | listItemStyle     | object       | {}                                                                                                                                                  | Each check list style                                 |
 | checkboxProp      | object       | {}                                                                                                                                                  | Custom checkbox style                                 |
-| textProp          | object       | `{ numberOfLines: 1, style: {fontSize: 14, color: '#626262',},}`                                                                                    | Props for checkbox Text component                     |
 | headerStyle       | object       | `{ padding: 10, flexDirection: 'row', alignItems: 'center', backgroundColor: 'black', text: { color: 'white', fontWeight: 'bold', fontSize: 16,},}` | Header check list style                               |
 | onChange          | function     | null                                                                                                                                                | Fires on each checkbox select or deselect             |
 | onLoading         | function     | null                                                                                                                                                | When the list is empty and a loader needs to be shown |
 | theme             | string       | #1A237E                                                                                                                                             | Custom theme color for checkbox                       |
+| renderItem        | function     | Text Component                                                                                                                                      | Custom render component for each list item            |
+
+**Refer [wiki](https://github.com/rinku-k/rn-checkbox-list/wiki/Props-Details) for detailed usecases of the props**
 
 ## Improvements
 

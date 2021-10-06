@@ -23,7 +23,7 @@ const CheckListItem = ({
       ...style,
     }}>
     <CheckBox theme={theme} isActive={isActive} checkboxProp={checkboxProp} />
-    {!!item && <View style={{ flex: 1 }}>{renderItem({ item: item })}</View>}
+    {!!item && <View style={{ flex: 1 }}>{renderItem({ item })}</View>}
     {children}
   </Touchable>
 );

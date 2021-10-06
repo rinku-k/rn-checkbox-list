@@ -48,7 +48,10 @@ class Selector extends Component {
           headerName="Movies"
           theme={theme}
           listItems={this.state.loader ? [] : data}
-          onChange={({ ids, items }) => console.log('My updated list :: ', ids)}
+          onChange={({ ids, items }) => {
+            // eslint-disable-next-line no-console
+            console.log('My updated list :: ', ids);
+          }}
           onLoading={() => (
             <View
               style={{

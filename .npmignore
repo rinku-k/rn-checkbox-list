@@ -78,3 +78,6 @@ app.json
 
 *.tgz
 yarn.lock
+
+tsconfig.json
+LICENSE

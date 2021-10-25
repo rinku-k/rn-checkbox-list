@@ -97,7 +97,7 @@ Check for complete example [here](https://github.com/rinku-k/rn-checkbox-list/bl
 | onChange          | function     | null                                                                                                                                                | Fires on each checkbox select or deselect             |
 | onLoading         | function     | null                                                                                                                                                | When the list is empty and a loader needs to be shown |
 | theme             | string       | #1A237E                                                                                                                                             | Custom theme color for checkbox                       |
-|**v1.1.0 & above **|||
+|**v1.1.0 & above**|||
 | renderItem        | function     | Text Component                                                                                                                                      | Custom render component for each list item            |
 
 **Refer [wiki](https://github.com/rinku-k/rn-checkbox-list/wiki/Props-Details) for detailed usecases of the props**

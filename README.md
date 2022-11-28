@@ -48,6 +48,7 @@ This library is available on [npm](https://www.npmjs.com/package/rn-checkbox-lis
 or
 `yarn add @react-native-community/checkbox rn-checkbox-list`
 
+and then run `npx pod-install`
 ## Usage
 
 1.  Import rn-checkbox-list:

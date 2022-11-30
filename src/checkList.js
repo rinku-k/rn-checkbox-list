@@ -14,29 +14,34 @@ class CheckboxList extends Component {
     this.selectAllItems = this.selectAllItems.bind(this);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  handleOnChange() {
     this.props.onChange({
-      ids: nextState.selectedIndexes,
-      items: nextState.selectedListItems,
+      ids: this.state.selectedIndexes,
+      items: this.state.selectedListItems,
     });
-    return true;
   }
 
   unSelectAllItem() {
-    this.setState({
-      selectedIndexes: [],
-      selectedListItems: [],
-    });
+    this.setState(
+      {
+        selectedIndexes: [],
+        selectedListItems: [],
+      },
+      this.handleOnChange,
+    );
   }
 
   selectAllItems() {
     const { selectedIndexes } = this.state;
     const { listItems } = this.props;
     if (selectedIndexes.length < listItems.length) {
-      this.setState({
-        selectedIndexes: listItems.map(item => item.id),
-        selectedListItems: [...listItems],
-      });
+      this.setState(
+        {
+          selectedIndexes: listItems.map(item => item.id),
+          selectedListItems: [...listItems],
+        },
+        this.handleOnChange,
+      );
     } else {
       this.unSelectAllItem();
     }
@@ -55,10 +60,13 @@ class CheckboxList extends Component {
       currentSelectedIds.push(data.id);
       currentSelectedItems.push(data);
     }
-    this.setState({
-      selectedIndexes: currentSelectedIds,
-      selectedListItems: currentSelectedItems,
-    });
+    this.setState(
+      {
+        selectedIndexes: currentSelectedIds,
+        selectedListItems: currentSelectedItems,
+      },
+      this.handleOnChange,
+    );
   }
 
   render() {

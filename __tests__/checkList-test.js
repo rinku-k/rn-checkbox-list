@@ -7,8 +7,14 @@ import React from 'react';
 import CheckboxList from '../src/checkList';
 
 // Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+import renderer, {act} from 'react-test-renderer';
 
 it('renders correctly', () => {
-  renderer.create(<CheckboxList />);
+  let component;
+  act(() => {
+    component = renderer.create(<CheckboxList />);
+  });
+  act(() => {
+    component.unmount();
+  });
 });
